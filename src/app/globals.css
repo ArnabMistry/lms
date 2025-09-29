@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.neon-text {
+  color: #00f0ff;
+  text-shadow: 0 0 5px #2d6ceb, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+}
+
+.neon-purple-text {
+  color: #b400ff;
+  text-shadow: 0 0 5px #b400ff, 0 0 10px #b400ff, 0 0 20px #b400ff, 0 0 40px #b400ff;
+}
+
+/* Neon Glow */
+.neon-text {
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+}
+
+.neon-purple-text {
+  color: #b400ff;
+  text-shadow: 0 0 5px #b400ff, 0 0 10px #b400ff, 0 0 20px #b400ff, 0 0 40px #b400ff;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 240, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Input Styling */
+.input-field {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 10px;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+  transition: border 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+}
+/* ---------- Dashboard & Cards ---------- */
+
+.team-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0,240,255,0.06);
+}
+
+/* member badges */
+.member-badge {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 6px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+/* eliminated badge */
+.eliminated-badge {
+  background: rgba(255,20,60,0.03);
+  border: 1px solid rgba(255,20,60,0.12);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+/* glass/card base (re-used) */
+.glass-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* input styles as used earlier */
+.input-field {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 10px;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+}
+
+/* neon text utilities */
+.neon-text {
+  color: #00f0ff;
+  text-shadow: 0 0 6px #00f0ff, 0 0 12px #00f0ff, 0 0 20px #00f0ff;
+}
+.neon-purple-text {
+  color: #b400ff;
+  text-shadow: 0 0 6px #b400ff, 0 0 12px #b400ff, 0 0 20px #b400ff;
+}
+
+/* Spin wheel animation helper */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 2.4s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+/* ---- Wheel & Pointer ---- */
+.wheel {
+  width: 360px;
+  height: 360px;
+  border-radius: 9999px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 6px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.wheel-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  transform-origin: 50% 50%;
+}
+
+/* pointer triangle */
+.pointer { pointer-events: none; }
+
+/* member badge used inside wheel controls */
+.member-badge { 
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* slow spin helper (if needed) */
+@keyframes wheel-stop {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* keep existing utilities (member-badge, neon-text etc) */
+
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+  }
+}
