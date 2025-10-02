@@ -338,11 +338,11 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
               <div className="emergency-button">
-                EMERGENCY
+                LMS
               </div>
               <div>
                 <h1 className="among-font text-4xl font-black text-white mb-2">
-                  CREWMATE ASSIGNMENT
+                  LAST MAN STANDING 3.0
                 </h1>
                 <p className="game-font text-lg text-gray-300">
                   Configure your lobby before the game starts
@@ -352,10 +352,10 @@ export default function DashboardPage() {
             </div>
             
             <div className="flex items-center space-x-4">
-              <div className="among-panel p-4 text-center">
+              {/* <div className="among-panel p-4 text-center">
                 <div className="game-font text-sm text-gray-400 mb-1">LOBBY STATUS</div>
                 <div className="among-font text-white font-bold">WAITING</div>
-              </div>
+              </div> */}
               
               <button
                 onClick={saveNow}
@@ -373,7 +373,7 @@ export default function DashboardPage() {
         <div className="max-w-7xl mx-auto">
           
           {/* Game Instructions */}
-          <div className="among-panel p-8 mb-8">
+          {/* <div className="among-panel p-8 mb-8">
             <div className="text-center">
               <h2 className="among-font text-3xl font-bold text-white mb-4">
                 LOBBY CONFIGURATION
@@ -392,7 +392,7 @@ export default function DashboardPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {teams.length === 0 ? (
             <div className="among-panel p-16 text-center">
@@ -578,7 +578,7 @@ export default function DashboardPage() {
           )}
 
           {/* Game Master Controls */}
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <div className="among-panel inline-block p-8">
               <h3 className="among-font text-2xl font-bold text-white mb-4">
                 GAME MASTER CONTROLS
@@ -595,7 +595,7 @@ export default function DashboardPage() {
                 </div>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
